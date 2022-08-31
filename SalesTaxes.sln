@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SalesTaxes.App", "SalesTaxes.App", "{7CDFDB54-5032-41DB-B2EB-085D0C513D69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTaxes.App", "SalesTaxes.App\SalesTaxes.App.csproj", "{3783D403-FA4A-498B-B7B4-F8EB48348FB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SalesTaxes.Business", "SalesTaxes.Business", "{EE154306-F508-4ACC-92AC-CFC460667BE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTaxes.Business", "SalesTaxes.Business\SalesTaxes.Business.csproj", "{68C4BF67-771C-4847-8CC6-0DA531459942}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3783D403-FA4A-498B-B7B4-F8EB48348FB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3783D403-FA4A-498B-B7B4-F8EB48348FB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3783D403-FA4A-498B-B7B4-F8EB48348FB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3783D403-FA4A-498B-B7B4-F8EB48348FB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68C4BF67-771C-4847-8CC6-0DA531459942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68C4BF67-771C-4847-8CC6-0DA531459942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68C4BF67-771C-4847-8CC6-0DA531459942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68C4BF67-771C-4847-8CC6-0DA531459942}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3783D403-FA4A-498B-B7B4-F8EB48348FB9} = {7CDFDB54-5032-41DB-B2EB-085D0C513D69}
+		{68C4BF67-771C-4847-8CC6-0DA531459942} = {EE154306-F508-4ACC-92AC-CFC460667BE8}
+	EndGlobalSection
+EndGlobal

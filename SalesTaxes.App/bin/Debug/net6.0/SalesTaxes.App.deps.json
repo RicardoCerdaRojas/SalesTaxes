@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "SalesTaxes.App/1.0.0": {
+        "dependencies": {
+          "SalesTaxes.Business": "1.0.0"
+        },
+        "runtime": {
+          "SalesTaxes.App.dll": {}
+        }
+      },
+      "SalesTaxes.Business/1.0.0": {
+        "runtime": {
+          "SalesTaxes.Business.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SalesTaxes.App/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SalesTaxes.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
