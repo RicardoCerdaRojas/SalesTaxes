@@ -8,6 +8,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SalesTaxes.Business", "Sale
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTaxes.Business", "SalesTaxes.Business\SalesTaxes.Business.csproj", "{68C4BF67-771C-4847-8CC6-0DA531459942}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTaxes.Test", "SalesTaxes.Test\SalesTaxes.Test.csproj", "{9B0CB7FF-B374-41FC-88E0-8E67241A82C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +24,10 @@ Global
 		{68C4BF67-771C-4847-8CC6-0DA531459942}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68C4BF67-771C-4847-8CC6-0DA531459942}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68C4BF67-771C-4847-8CC6-0DA531459942}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B0CB7FF-B374-41FC-88E0-8E67241A82C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B0CB7FF-B374-41FC-88E0-8E67241A82C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B0CB7FF-B374-41FC-88E0-8E67241A82C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B0CB7FF-B374-41FC-88E0-8E67241A82C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3783D403-FA4A-498B-B7B4-F8EB48348FB9} = {7CDFDB54-5032-41DB-B2EB-085D0C513D69}
