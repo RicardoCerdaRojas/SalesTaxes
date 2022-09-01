@@ -20,8 +20,30 @@ public class Reciept
         {
             Console.WriteLine(String.Format("{0}", processedItem.ShoppingItem.Description));
         }
-        Console.WriteLine($"Sales Taxes {TotalSalesTax.ToString("##.00")}");
-        Console.WriteLine($"Total {TotalBillAmount.ToString("##.00")}");
+        Console.WriteLine($"Sales Taxes: {TotalSalesTax.ToString("##.00")}");
+        Console.WriteLine($"Total: {TotalBillAmount.ToString("##.00")}");
     }
+    public List<string> GetBillItems()
+    {
+        List<string> billItems = new List<string>();
+        try
+        {
+            foreach (var processedItem in ProcessedShoppingCart)
+            {
+                billItems.Add(String.Format("{0}", processedItem.ShoppingItem.Description));
+            }
+            billItems.Add($"Sales Taxes: {TotalSalesTax.ToString("##.00")}");
+            billItems.Add($"Total: {TotalBillAmount.ToString("##.00")}");
+
+            return billItems;
+
+        }
+        catch (Exception e)
+        {
+            billItems.Add(e.Message);
+            return new List<string>(billItems);
+        }
+    }
+    
 
 }
