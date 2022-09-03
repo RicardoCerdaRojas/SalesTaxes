@@ -1,6 +1,6 @@
 using SalesTaxes.Business.Interfaces;
+using SalesTaxes.Business.POCOs;
 
-namespace SalesTaxes.Business.POCOs;
 
 public class ImportDuty: ITaxesPolicy
 {
@@ -9,12 +9,21 @@ public class ImportDuty: ITaxesPolicy
         return product.IsImport;
     }
 
-    public decimal Compute(IProduct product, decimal totalPrice, DataTaxes dataTaxes)
+    public decimal Compute(IProduct product, int quantity, DataTaxes dataTaxes)
     {
         if (IsApplicable(product))
-            //return decimal.Round((totalPrice * dataTaxes.ImportDuty), 10, MidpointRounding.AwayFromZero);
-            return totalPrice * dataTaxes.ImportDuty;
-
+        {
+            decimal calculateTaxForAllProducs = 0m;
+            for (int i = 1; i <= quantity; i++)
+            {
+                decimal temporalTax = decimal.Round((product.Price * dataTaxes.ImportDuty), 2, MidpointRounding.AwayFromZero);
+                if(Convert.ToInt32(temporalTax.ToString()[3].ToString()) > 5)
+                    calculateTaxForAllProducs += decimal.Round(temporalTax, 1, MidpointRounding.AwayFromZero);
+                else
+                    calculateTaxForAllProducs += temporalTax;
+            }
+            return calculateTaxForAllProducs;
+        }
         return 0m;
     }
     

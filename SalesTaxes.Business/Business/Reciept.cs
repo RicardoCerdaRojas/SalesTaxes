@@ -4,24 +4,14 @@ namespace SalesTaxes.Business.POCOs;
 
 public class Reciept
 {
-    public List<BilledShoppingItem> ProcessedShoppingCart { get; }
+    public List<ShoppingItem> ProcessedShoppingCart { get; }
     public decimal TotalBillAmount { get; }
     public decimal TotalSalesTax { get; }
-    public Reciept(List<BilledShoppingItem> processedShoppingCart, decimal totalBillAmount, decimal totalSalesTax)
+    public Reciept(List<ShoppingItem> processedShoppingCart, decimal totalBillAmount, decimal totalSalesTax)
     {
         ProcessedShoppingCart = processedShoppingCart;
         TotalBillAmount = totalBillAmount;
         TotalSalesTax = totalSalesTax;
-    }
-
-    public void PrintBill()
-    {
-        foreach (var processedItem in ProcessedShoppingCart)
-        {
-            Console.WriteLine(String.Format("{0}", processedItem.ShoppingItem.Description));
-        }
-        Console.WriteLine($"Sales Taxes: {TotalSalesTax.ToString("##.00")}");
-        Console.WriteLine($"Total: {TotalBillAmount.ToString("##.00")}");
     }
     public List<string> GetBillItems()
     {
@@ -30,10 +20,10 @@ public class Reciept
         {
             foreach (var processedItem in ProcessedShoppingCart)
             {
-                billItems.Add(String.Format("{0}", processedItem.ShoppingItem.Description));
+                billItems.Add(String.Format("{0}", processedItem.Description));
             }
-            billItems.Add($"Sales Taxes: {TotalSalesTax.ToString("##.00")}");
-            billItems.Add($"Total: {TotalBillAmount.ToString("##.00")}");
+            billItems.Add($"Sales Taxes: {TotalSalesTax.ToString("#0.00")}");
+            billItems.Add($"Total: {TotalBillAmount.ToString("#0.00")}");
 
             return billItems;
 

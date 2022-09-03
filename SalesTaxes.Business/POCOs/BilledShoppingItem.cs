@@ -4,14 +4,14 @@ namespace SalesTaxes.Business.POCOs;
 
 public class BilledShoppingItem
 {
-    public ShoppingItem ShoppingItem { get; }
-    public decimal Tax { get; }
+    public List<ShoppingItem> ShoppingItem { get; }
+    public decimal TotalTax { get; }
     public decimal TotalPrice { get; }
 
-    public BilledShoppingItem(ShoppingItem shoppingItem, decimal tax, decimal totalPrice)
+    public BilledShoppingItem(List<ShoppingItem> shoppingItem, decimal totalTax, decimal totalPrice)
     {
         ShoppingItem = shoppingItem;
-        Tax = tax;
+        TotalTax = totalTax;
         TotalPrice = totalPrice;
     }
 

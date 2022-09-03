@@ -18,13 +18,11 @@ public class SalesTaxesShould
         List<ShoppingItem> shoppingItems = new List<ShoppingItem>()
         {
             new ShoppingItem( new Product(1,"Book", 12.49m, false, ProductType.Book),
-                1, "Book"),
-            new ShoppingItem( new Product(1,"Book", 12.49m, false, ProductType.Book),
-                1, "Book"),
+                2),
             new ShoppingItem( new Product(3, "Music CD",14.99m, false, ProductType.Music),
-                1, "Music CD"),
+                1),
             new ShoppingItem( new Product(2, "Chocolate bar", 0.85m, false, ProductType.Food),
-                1, "Chocolate bar")
+                1)
         };
         
         //expected bill
@@ -39,7 +37,7 @@ public class SalesTaxesShould
 
         //Acts
         var process = new BillProcess(_taxCompute);
-        var receipt = process.ProcessCart(shoppingItems);
+        var receipt = process.ProcessCart2(shoppingItems);
         List<string> actual = receipt.GetBillItems();
 
         //Asserts
@@ -54,9 +52,9 @@ public class SalesTaxesShould
         List<ShoppingItem> shoppingItems = new List<ShoppingItem>()
         {
             new ShoppingItem( new Product(4, "Imported box of chocolates", 10.00m, true, ProductType.Food),
-                1, "Imported box of chocolates"),
+                1),
             new ShoppingItem( new Product(5, "Imported bottle of perfume", 47.50m, true, ProductType.Perfum),
-                1, "Imported bottle of perfume")
+                1)
         };
         
         //expected bill
@@ -70,7 +68,7 @@ public class SalesTaxesShould
 
         //Acts
         var process = new BillProcess(_taxCompute);
-        var receipt = process.ProcessCart(shoppingItems);
+        var receipt = process.ProcessCart2(shoppingItems);
         List<string> actual = receipt.GetBillItems();
 
         //Asserts
@@ -85,15 +83,13 @@ public class SalesTaxesShould
         List<ShoppingItem> shoppingItems = new List<ShoppingItem>()
         {
             new ShoppingItem(new Product(6, "Imported bottle of perfume", 27.99m, true, ProductType.Perfum),
-                1, "Imported bottle of perfume"),
-            new ShoppingItem(new Product(7, "bottle of perfume", 18.99m, false, ProductType.Perfum),
-                1, "bottle of perfume"),
+                1),
+            new ShoppingItem(new Product(7, "Bottle of perfume", 18.99m, false, ProductType.Perfum),
+                1),
             new ShoppingItem(new Product(8, "Packet of headache pills", 9.75m, false, ProductType.Medicine),
-                1, "Packet of headache pills"),
+                1),
             new ShoppingItem(new Product(9, "Imported box of chocolates", 11.25m, true, ProductType.Food),
-                1, "Imported box of chocolates"),
-            new ShoppingItem(new Product(9, "Imported box of chocolates", 11.25m, true, ProductType.Food),
-                1, "Imported box of chocolates")
+                2)
         };
         
         //expected bill
@@ -109,7 +105,7 @@ public class SalesTaxesShould
 
         //Acts
         var process = new BillProcess(_taxCompute);
-        var receipt = process.ProcessCart(shoppingItems);
+        var receipt = process.ProcessCart2(shoppingItems);
         List<string> actual = receipt.GetBillItems();
 
         //Asserts

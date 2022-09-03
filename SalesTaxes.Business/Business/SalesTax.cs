@@ -1,6 +1,6 @@
 using SalesTaxes.Business.Interfaces;
+using SalesTaxes.Business.POCOs;
 
-namespace SalesTaxes.Business.POCOs;
 
 public class SalesTax: ITaxesPolicy
 {
@@ -14,12 +14,22 @@ public class SalesTax: ITaxesPolicy
         return true;
     }
 
-    public decimal Compute(IProduct product, decimal totalPrice, DataTaxes dataTaxes)
+    public decimal Compute(IProduct product, int quantity, DataTaxes dataTaxes)
     {
         if (IsApplicable(product))
-            //return decimal.Round((totalPrice * dataTaxes.SalesTaxes), 10, MidpointRounding.AwayFromZero);
-            return (totalPrice * dataTaxes.SalesTaxes);
+        {
+            decimal calculateTaxForAllProducs = 0;
+            for (int i = 1; i <= quantity; i++)
+            {
+                decimal temporalTax = decimal.Round((product.Price * dataTaxes.SalesTaxes), 2, MidpointRounding.AwayFromZero);
 
+                if(Convert.ToInt32(temporalTax.ToString()[3].ToString()) > 5)
+                    calculateTaxForAllProducs += decimal.Round(temporalTax, 1, MidpointRounding.AwayFromZero);
+                else
+                    calculateTaxForAllProducs += temporalTax;
+            }
+            return calculateTaxForAllProducs;
+        }
         return 0m;
     }
     
